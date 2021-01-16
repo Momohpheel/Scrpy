@@ -53,7 +53,7 @@ class LoginController extends Controller
      *
      * @param
      */
-     protected function setGuard($request)
+     public function setGuard($request)
      {
          $user = $request->user ?? null;
  
