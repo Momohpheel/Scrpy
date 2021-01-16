@@ -44,6 +44,7 @@ class LoginController extends Controller
 
     protected function guard()
     {
+
         return Auth::guard($this->guard);
     }
 
