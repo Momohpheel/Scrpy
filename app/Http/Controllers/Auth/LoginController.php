@@ -69,7 +69,7 @@ class LoginController extends Controller
      * @param  mixed  $user
      * @return mixed
      */
-    protected function authenticated(Request $request, $user)
+    public function authenticated(Request $request, $user)
     {
         try{
             $accessToken = $user->createToken('authToken')->accessToken;
