@@ -57,7 +57,7 @@ class LoginController extends Controller
             default:
                 $this->guard = 'web';
                 break;
-
+            }
         return Auth::guard($this->guard);
     }
 
