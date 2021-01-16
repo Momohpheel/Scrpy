@@ -42,9 +42,21 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function guard($user)
+    protected function guard()
     {
-        switch($user){
+        return Auth::guard($this->guard);
+    }
+
+    /**
+     * Set the guard to be used during authentication.
+     *
+     * @param
+     */
+     protected function setGuard($request)
+     {
+         $user = $request->user ?? null;
+ 
+         switch($user){
             case 'user':
                 $this->guard = 'web';
             break;
@@ -53,10 +65,10 @@ class LoginController extends Controller
             break;
             default:
                 $this->guard = 'web';
-        }
+                break;
 
-        return Auth::guard($this->guard);
-    }
+            
+        }
 
     /**
      * The user has been authenticated.
