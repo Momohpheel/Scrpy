@@ -60,23 +60,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function guard($user)
-    {
-        switch($user){
-            case 'user':
-                $this->guard = 'web';
-            break;
-            case 'admin':
-                $this->guard = 'admin';
-            break;
-            default:
-                $this->guard = 'web';
-        }
-
-        return Auth::guard($this->guard);
-    }
-
-
+    
     /**
      * Create a new user instance after a valid registration.
      *
