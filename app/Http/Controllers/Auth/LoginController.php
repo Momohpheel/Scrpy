@@ -42,7 +42,13 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function guard($request)
+    protected function guard()
+    {
+        return Auth::guard($this->guard);
+    }
+
+
+    protected function setGuard($request)
     {
 
         $user = $request->user ?? null;
@@ -58,10 +64,8 @@ class LoginController extends Controller
                 $this->guard = 'web';
                 break;
             }
-        return Auth::guard($this->guard);
+      
     }
-
-
     /**
      * The user has been authenticated.
      *
