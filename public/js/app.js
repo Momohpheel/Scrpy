@@ -37768,9 +37768,11 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "col-lg-12 text-center mt-5" }, [
             _vm._v("\n                                Don't have an account? "),
-            _c("a", { staticClass: "text-danger", attrs: { href: "#" } }, [
-              _vm._v("Sign Up")
-            ])
+            _c(
+              "a",
+              { staticClass: "text-danger", attrs: { href: "/register" } },
+              [_vm._v("Sign Up")]
+            )
           ])
         ])
       ])

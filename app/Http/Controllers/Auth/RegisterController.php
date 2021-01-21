@@ -69,8 +69,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $data['user'] = $data['user'] ? $data['user'] : null;
-        switch($data['user']){
+        if (isset($data['user'])){
+            $user = $data['user'];
+        }
+        else{
+            $user = 'user';
+        }
+
+        switch($user){
             case 'user':
                 $user = new User();
             break;

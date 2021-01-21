@@ -22,7 +22,7 @@
                                     <button type="submit" class="btn btn-block btn-dark">Sign In</button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                    Don't have an account? <a href="#" class="text-danger">Sign Up</a>
+                                    Don't have an account? <a href="/register" class="text-danger">Sign Up</a>
                                 </div>
                             </div>
                         </form>
