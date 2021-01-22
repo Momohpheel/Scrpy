@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/storage/images/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url('css/assets/images/favicon.png')}}">
     <title>Admin</title>
     <!-- Custom CSS -->
-    <link href="{{asset("/storage/style.min.css")}}" rel="stylesheet">
+    <link href="{{url('css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,17 +52,17 @@
                         <a href="index.html">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="{{asset("/storage/images/logo-icon.png")}}" alt="homepage" class="dark-logo" />
+                                <img src="{{url('css/assets/images/logo-icon.png')}}" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="{{asset("/storage/images/logo-icon.png")}}" alt="homepage" class="light-logo" />
+                                <img src="{{url('css/assets/images/logo-icon.png')}}" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
-                                <img src="{{asset("/storage/images/logo-text.png")}}" alt="homepage" class="dark-logo" />
+                                <img src="{{url('css/assets/images/logo-text.png')}}" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo text -->
-                                <img src="{{asset("/storage/images/light-text.png")}}" class="light-logo" alt="homepage" />
+                                <img src="{{url('css/assets/images/light-text.png')}}" class="light-logo" alt="homepage" />
                             </span>
                         </a>
                     </div>
@@ -214,7 +214,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <img src="{{asset("/storage/images/users/profile-pic.jpg")}}" alt="user" class="rounded-circle"
+                                <img src="{{url('css/assets/images/users/profile-pic.jpg')}}" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
                                         class="text-dark">Admin</span> <i data-feather="chevron-down"
@@ -1230,23 +1230,23 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="{{asset("js/app.js")}}"></script>
-    <script src="{{asset("/storage/assets/libs/jquery/dist/jquery.min.js")}} "></script>
+    <script src="{{url('css/assets/libs/jquery/dist/jquery.min.js')}} "></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{asset("/storage/assets/libs/popper.js/dist/umd/popper.min.js")}}"></script>
-    <script src="{{asset("/storage/assets/libs/bootstrap/dist/js/bootstrap.min.js")}}"></script>
+    <script src="{{url('css/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
+    <script src="{{url('css/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- apps -->
     <!-- apps -->
-    <script src="{{asset("/storage/dist/js/app-style-switcher.js")}}"></script>
-    <script src="{{asset("/storage/dist/js/feather.min.js")}}"></script>
+    <script src="{{url('js/dist/js/app-style-switcher.js')}}"></script>
+    <script src="{{url('js/dist/js/feather.min.js')}}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="{{asset("/storage/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js")}}"></script>
-    <script src="{{asset("/storage/assets/extra-libs/sparkline/sparkline.js")}}"></script>
+    <script src="{{url('css/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{url('css/assets/extra-libs/sparkline/sparkline.js')}}"></script>
     <!--Wave Effects -->
     <!-- themejs -->
     <!--Menu sidebar -->
-    <script src="{{asset("/storage/dist/js/sidebarmenu.js")}}"></script>
+    <script src="{{url("js/dist/js/sidebarmenu.js")}}"></script>
     <!--Custom JavaScript -->
-    <script src="{{asset("/storage/dist/js/custom.min.js")}}"></script>
+    <script src="{{url("js/dist/js/custom.min.js")}}"></script>
 
 </body>
 
