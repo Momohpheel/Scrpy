@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{url("css/assets/images/favicon.png")}}">
     <title>Admin</title>
     <!-- Custom CSS -->
-    <link href="{{url("js/dist/css/style.min.css")}}" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
