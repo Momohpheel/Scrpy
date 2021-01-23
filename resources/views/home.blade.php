@@ -1230,17 +1230,17 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="{{ secure_asset('js/app.js') }}"></script>
-    <script src="{{secure_asset('css/assets/libs/jquery/dist/jquery.min.js')}} "></script>
+    <script src="{{secure_asset('js/assets/libs/jquery/dist/jquery.min.js')}} "></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{secure_asset('css/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
-    <script src="{{secure_asset('css/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{secure_asset('js/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
+    <script src="{{secure_asset('js/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- apps -->
     <!-- apps -->
     <script src="{{secure_asset('js/dist/js/app-style-switcher.js')}}"></script>
     <script src="{{secure_asset('js/dist/js/feather.min.js')}}"></script>
     <!-- slimscrollbar 'scrollbar JavaScript -->
-    <script src="{{secure_asset('css/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{secure_asset('css/assets/extra-libs/sparkline/sparkline.js')}}"></script>
+    <script src="{{secure_asset('js/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{secure_asset('js/assets/extra-libs/sparkline/sparkline.js')}}"></script>
     <!--Wave Effects -->
     <!-- themejs -->
     <!--Menu sidebar -->
