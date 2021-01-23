@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset("/storage/images/favicon.png")}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/assets/images/favicon.png">
     <title>admin</title>
     <!-- Custom CSS -->
-    <link href="{{asset("/storage/style.min.css")}}" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,14 +39,14 @@
         <!-- Login box.scss -->
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-            style="background:url({{asset("/storage/images/big/auth-bg.jpg")}}) no-repeat center center;">
+            style="background:url({{url("css/assets/images/big/auth-bg.jpg")}}) no-repeat center center;">
             <div class="auth-box row">
-                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url({{asset("/storage/images/big/3.jpg")}});">
+                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url({{url("css/assets/images/big/3.jpg")}});">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
                         <div class="text-center">
-                            <img src="{{asset("/storage/images/big/icon.png")}}" alt="wrapkit">
+                            <img src="{{url("css/assets/images/big/icon.png")}}" alt="wrapkit">
                         </div>
                         <div id="app">
                                 <login-component></login-component>
@@ -63,17 +63,17 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="{{asset("js/assets/libs/jquery/dist/jquery.min.js")}} "></script>
+    <script src="{{url("css/assets/libs/jquery/dist/jquery.min.js")}} "></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{asset("js/assets/libs/popper.js/dist/umd/popper.min.js")}} "></script>
-    <script src="{{asset("js/assets/libs/bootstrap/dist/js/bootstrap.min.js")}} "></script>
+    <script src="{{url("css/assets/libs/popper.js/dist/umd/popper.min.js")}} "></script>
+    <script src="{{url("css/assets/libs/bootstrap/dist/js/bootstrap.min.js")}} "></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
     <script>
         $(".preloader ").fadeOut();
     </script>
-    <script src=" {{asset('js/app.js')}} "></script>
+    <script src=" {{secure_asset('js/app.js')}} "></script>
 </body>
 
 </html>

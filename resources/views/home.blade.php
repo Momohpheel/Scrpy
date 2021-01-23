@@ -1229,7 +1229,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{asset("js/app.js")}}"></script>
+    <script src="{{secure_asset("js/app.js")}}"></script>
     <script src="{{url("css/assets/libs/jquery/dist/jquery.min.js")}} "></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{url("css/assets/libs/popper.js/dist/umd/popper.min.js")}}"></script>
