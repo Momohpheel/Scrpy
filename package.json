@@ -1,4 +1,11 @@
 {
+    "name": "Scrcpy",
+    "description": "a really cool app",
+    "version": "1.0.0",
+    "engines": {
+        "node": "12.x",
+        "npm": "6.x"
+    },
     "private": true,
     "scripts": {
         "dev": "npm run development",
@@ -8,7 +15,9 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "postinstall": "npm run prod"
+        "postinstall": "npm run production",
+        "heroku-prebuild": "npm install -f",
+        "heroku-postbuild": "npm run production"
     },
     "devDependencies": {
         "@popperjs/core": "^2.6.0",
