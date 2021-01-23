@@ -1230,24 +1230,24 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="{{ secure_asset('js/app.js') }}"></script>
-    <script src="{{url('css/assets/libs/jquery/dist/jquery.min.js')}} "></script>
+    <script src="{{secure_asset('css/assets/libs/jquery/dist/jquery.min.js')}} "></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{url('css/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
-    <script src="{{url('css/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{secure_asset('css/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
+    <script src="{{secure_asset('css/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- apps -->
     <!-- apps -->
-    <script src="{{url('js/dist/js/app-style-switcher.js')}}"></script>
-    <script src="{{url('js/dist/js/feather.min.js')}}"></script>
+    <script src="{{secure_asset('js/dist/js/app-style-switcher.js')}}"></script>
+    <script src="{{secure_asset('js/dist/js/feather.min.js')}}"></script>
     <!-- slimscrollbar 'scrollbar JavaScript -->
-    <script src="{{url('css/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{url('css/assets/extra-libs/sparkline/sparkline.js')}}"></script>
+    <script src="{{secure_asset('css/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{secure_asset('css/assets/extra-libs/sparkline/sparkline.js')}}"></script>
     <!--Wave Effects -->
     <!-- themejs -->
     <!--Menu sidebar -->
-    <script src="{{url('js/dist/js/sidebarmenu.js')}}"></script>
+    <script src="{{secure_asset('js/dist/js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
-    <script src="{{url('js/dist/js/custom.min.js')}}"></script>
-    <script src="{{ secure_asset('js/app.js') }}"></script>
+    <script src="{{secure_asset('js/dist/js/custom.min.js')}}"></script>
+    <script src=" {{secure_asset('js/app.js')}} "></script>
 </body>
 
 </html>
