@@ -39,6 +39,8 @@
         "fsevents": "^2.3.1"
     },
     "dependencies": {
-        "urix": "^0.1.0"
+        "sweetalert2": "^10.13.3",
+        "urix": "^0.1.0",
+        "vue-router": "^3.5.0"
     }
 }

@@ -49,8 +49,7 @@
                             <img src="{{url("css/assets/images/big/icon.png")}}" alt="wrapkit">
                         </div>
                         <div id="app">
-                                <login-component></login-component>
-                          
+                            <login-component></login-component>
                         </div>
                     </div>
                 </div>
@@ -63,6 +62,7 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
+    <script src=" {{asset('js/app.js')}} "></script>
     <script src="{{url("css/assets/libs/jquery/dist/jquery.min.js")}} "></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{url("css/assets/libs/popper.js/dist/umd/popper.min.js")}} "></script>
@@ -70,10 +70,11 @@
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
-    <script>
+    {{-- <script>
         $(".preloader ").fadeOut();
-    </script>
-    <script src=" {{secure_asset('js/app.js')}} "></script>
+    </script> --}}
+    <script src=" {{asset('js/app.js')}} "></script>
+     {{-- <script src=" {{secure_asset('js/app.js')}} "></script> --}}
 </body>
 
 </html>

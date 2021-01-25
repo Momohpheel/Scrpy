@@ -28,8 +28,30 @@
 </template>
 
 <script>
+    export default {
+           data(){
+        return {
+            users: [],
+            user: {
+                id: "",
+                name: "",
+                email: ""
+            }
 
-export default{
+        }
 
-}
+    },
+    created(){
+        this.fetchUsers();
+    },
+    methods: {
+        fetchUsers(){
+            fetch('api/v1/allProfile')
+            .then(res => res.json())
+            .then(res => {
+                console.log(res.data);
+            })
+        }
+    }
+    }
 </script>

@@ -76,4 +76,9 @@ class UserController extends Controller
         }
         
     }
+
+    public function getAllUsers(){
+        $profile = Profile::all();
+        return $this->success($profile, "Profile", 200);
+    }
 }

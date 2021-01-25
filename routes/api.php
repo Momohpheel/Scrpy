@@ -26,6 +26,7 @@ Route::group(['prefix' => 'v1'], function () {
     });
     Route::post('profile', 'UserController@createUserProfile')->middleware('auth:api');
     Route::get('profile', 'UserController@getUserProfile')->middleware('auth:api');
+    Route::get('allProfile', 'UserController@getAllUsers');
 });
 
 

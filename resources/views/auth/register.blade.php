@@ -72,7 +72,8 @@
     <script>
         $(".preloader ").fadeOut();
     </script>
-    <script src=" {{secure_asset('js/app.js')}} "></script>
+    <script src=" {{asset('js/app.js')}} "></script>
+     {{-- <script src=" {{secure_asset('js/app.js')}} "></script> --}}
 </body>
 
 </html>
