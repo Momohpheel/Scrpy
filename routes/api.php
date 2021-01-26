@@ -21,12 +21,16 @@ Route::group(['prefix' => 'v1'], function () {
     Route::group(['prefix' => 'auth'], function () {
         Route::post('login', 'Auth\LoginController@login');
         Route::post('register', 'Auth\RegisterController@register');
-       
+
         //Route::get('users', '');
     });
     Route::post('profile', 'UserController@createUserProfile')->middleware('auth:api');
     Route::get('profile', 'UserController@getUserProfile')->middleware('auth:api');
-    Route::get('allProfile', 'UserController@getAllUsers');
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('profiles', 'UserController@getAllUsers');
+        Route::delete('delete/{id}', 'UserController@deleteUser');
+    });
+
 });
 
 

@@ -9,4 +9,8 @@ class Profile extends Model
     protected $fillable = [
         'firstname', 'lastname','user_id', 'gender','state', 'city', 'country','phone', 'address'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

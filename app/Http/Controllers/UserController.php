@@ -10,9 +10,9 @@ use App\Traits\Response;
 class UserController extends Controller
 {
 
-    use Response; 
+    use Response;
     public function createUserProfile(Request $request){
-        
+
         $validated = $request->validate([
             "firstname" => "required|string",
             "lastname" => "required|string",
@@ -37,18 +37,18 @@ class UserController extends Controller
                 "gender" => $validated['gender'],
                 "user_id" => auth()->user()->id,
             ]);
-    
+
             return $this->success($profile, "Profile Updated", 200);
-    
-    
+
+
 
         }catch(Exception $e){
             return $this->error(true, "Profile Update Error", 400);
         }
 
-       
 
-        
+
+
 
     }
 
@@ -74,11 +74,19 @@ class UserController extends Controller
         }catch(Exception $e){
             return $this->error(true, "Couldn.t get profile", 400);
         }
-        
+
     }
 
     public function getAllUsers(){
-        $profile = Profile::all();
+        $profile = Profile::with('user')->get();
         return $this->success($profile, "Profile", 200);
+    }
+
+    public function deleteUser($id){
+        $profile = Profile::where('user_id', $id)->first();
+        $profile->delete();
+        return $this->success(true, "Profile Deleted", 200);
+
+
     }
 }
