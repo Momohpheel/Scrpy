@@ -1,46 +1,34 @@
 <template>
     <div id="app">
-
-            <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-        <header class="topbar" data-navbarbg="skin6">
-            <nav class="navbar top-navbar navbar-expand-md">
-                <div class="navbar-header" data-logobg="skin6">
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+        <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+            <header class="topbar" data-navbarbg="skin6">
+                <nav class="navbar top-navbar navbar-expand-md">
+                    <div class="navbar-header" data-logobg="skin6">
+                        <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                             class="ti-menu ti-close"></i></a>
-                    <div class="navbar-brand">
-                        <a href="index.html">
-                            <b class="logo-icon">
-                                <!-- Dark Logo icon -->
-                                <img src='css/assets/images/logo-icon.png' alt="homepage" class="dark-logo" />
-                                <!-- Light Logo icon -->
-                                <img src='css/assets/images/logo-icon.png' alt="homepage" class="light-logo" />
-                            </b>
-                            <span class="logo-text">
-                                <!-- dark Logo text -->
-                                <img src='css/assets/images/logo-text.png' alt="homepage" class="dark-logo" />
-                                <!-- Light Logo text -->
-                                <img src='css/assets/images/light-text.png' class="light-logo" alt="homepage" />
-                            </span>
-                        </a>
-                    </div>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- Toggle which is visible on mobile only -->
-                    <!-- ============================================================== -->
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                        <div class="navbar-brand">
+                            <a href="index.html">
+                                <b class="logo-icon">
+                                    <!-- Dark Logo icon -->
+                                    <img src='css/assets/images/logo-icon.png' alt="homepage" class="dark-logo" />
+                                    <!-- Light Logo icon -->
+                                    <img src='css/assets/images/logo-icon.png' alt="homepage" class="light-logo" />
+                                </b>
+                                <span class="logo-text">
+                                    <!-- dark Logo text -->
+                                    <img src='css/assets/images/logo-text.png' alt="homepage" class="dark-logo" />
+                                    <!-- Light Logo text -->
+                                    <img src='css/assets/images/light-text.png' class="light-logo" alt="homepage" />
+                                </span>
+                            </a>
+                        </div>
+                        <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
                         data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
                             class="ti-more"></i></a>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                         <!-- Notification -->
                         <li class="nav-item dropdown">
@@ -126,7 +114,6 @@
                 </div>
             </nav>
         </header>
-
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar" data-sidebarbg="skin6">

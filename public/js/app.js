@@ -2115,19 +2115,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2234,7 +2221,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2278,11 +2264,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
 //
 //
 //
@@ -39415,7 +39396,9 @@ var render = function() {
                         "div",
                         { staticClass: "col-lg-12 text-center mt-5" },
                         [
-                          _vm._v("\n                Don't have an account? "),
+                          _vm._v(
+                            "\n                                        Don't have an account? "
+                          ),
                           _c(
                             "router-link",
                             {
@@ -39622,7 +39605,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-lg-12 text-center mt-5" }, [
-      _vm._v("\n                                Already have an account? "),
+      _vm._v("\n                                    Already have an account? "),
       _c("a", { staticClass: "text-danger", attrs: { href: "#" } }, [
         _vm._v("Sign In")
       ])
