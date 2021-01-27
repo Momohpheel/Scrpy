@@ -1,21 +1,21 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
-import Login from './components/LoginComponent.vue';
-import Dashboard from './components/Dashboard.vue';
-import Register from './components/Register.vue';
+import Login from './components/Pages/LoginPage.vue';
+import Dashboard from './components/Pages/Dashboard.vue';
+import Register from './components/Pages/Register.vue';
 
 
 const routes = [
+    // {
+    //     path: '/',
+    //     name: 'Home',
+    //     redirect: '/login'
+    // },
     {
         path: '/',
-        name: 'Home',
-        redirect: '/login'
-    },
-    {
-        path: '/',
-        name: 'Login',
-        component: Login,
+        component: Login
     },
     {
         path: '/signup',
