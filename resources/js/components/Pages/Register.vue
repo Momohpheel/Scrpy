@@ -61,8 +61,6 @@ export default {
     methods : {
         async handleSubmit(e) {
             e.preventDefault();
-
-
                axios.post('api/v1/auth/register', {
                             name: this.name,
                             email: this.email,

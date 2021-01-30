@@ -41,6 +41,6 @@
     "dependencies": {
         "sweetalert2": "^10.13.3",
         "urix": "^0.1.0",
-        "vue-router": "^3.5.0"
+        "vue-router": "^3.5.1"
     }
 }
