@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="css/assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://scrcpybackend.herokuapp.com/css/assets/images/favicon.png">
     <title>Admin</title>
     <script>window.Laravel = { csrfToken: '{{csrf_token()}}'} </script>
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href="https://scrcpybackend.herokuapp.com/css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
