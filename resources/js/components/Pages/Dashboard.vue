@@ -101,7 +101,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
 
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
+                                <a class="dropdown-item" href="javascript:void(0)" @click="logout"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
                                 <div class="dropdown-divider"></div>
@@ -120,9 +120,9 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href=""
+                        <li class="sidebar-item"> <router-link class="sidebar-link sidebar-link" to="/dashboard"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                                    class="hide-menu">Dashboard</span></router-link></li>
                         <li class="list-divider"></li>
                     </ul>
                 </nav>
@@ -155,7 +155,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">User Table</h4>
+                                <!-- <h4 class="card-title">User Table</h4> -->
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -163,16 +163,22 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">First</th>
                                                 <th scope="col">Last</th>
-                                                <th scope="col"></th>
+                                                <th scope="col">Phone Number</th>
+                                                <th scope="col">e-mail</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
+                                                <tr v-for="user in users" v-bind:key="user.id">
+                                                    <th scope="row">{{user.id}}</th>
+                                                    <td>{{user.firstname}}</td>
+                                                    <td>{{user.lastname}}</td>
+                                                    <td>{{user.phone}}</td>
+                                                    <td>{{user.user.email}}</td>
+                                                    <td>
+                                                        <button class="btn btn-danger" @click="deleteUser(user.id)"> Delete User</button>
+                                                    </td>
+                                                </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -195,29 +201,74 @@
 
 <script>
     export default {
-           data(){
-        return {
-            users: [],
-            user: {
-                id: "",
-                name: "",
-                email: ""
-            }
-
+        data(){
+            return {
+                users: [],
+                
         }
-
     },
     created(){
         this.fetchUsers();
     },
     methods: {
         fetchUsers(){
-            fetch('api/v1/allProfile')
+            fetch("http://127.0.0.1:8000/api/v1/user/profiles", {
+                method: "get",
+                headers: {
+                    "content-type": "application/json",
+                    Accept: "application/json"
+                }
+            })
             .then(res => res.json())
             .then(res => {
-                console.log(res.data);
+                
+                this.users = res.data
             })
-        }
+            .catch(err => console.log(err));
+        },
+        deleteUser(id){
+            fetch(`http://127.0.0.1:8000/api/v1/user/delete/${id}`, {
+                method: "delete",
+                
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                 Swal.fire(
+                    'Successful!',
+                    'User is deleted!',
+                    'success'
+                );
+                this.$router.push({path: '/dashboard'})
+            })
+            .catch(err => console.log(err));
+        },
+        logout() {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, log me out!',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            localStorage.removeItem('user');
+            Swal.fire({
+              allowEnterKey: false,
+              allowEscapeKey: false,
+              showConfirmButton: false,
+              title: 'Done!',
+              text: 'You are being logged out.',
+              icon: 'success',
+            });
+
+            this.$router.push({path: '/'});
+          }
+        });
+      }
     }
     }
+    
 </script>
