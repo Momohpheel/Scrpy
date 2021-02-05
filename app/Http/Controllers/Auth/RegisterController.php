@@ -11,7 +11,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\Response;
-
 use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
@@ -102,15 +101,15 @@ class RegisterController extends Controller
      * @param  mixed  $user
      * @return mixed
      */
+
     protected function registered(Request $request, $user)
     {
-
         try{
             $accessToken = $user->createToken('authToken')->accessToken;
-            return $this->success(["user"=>$user, "access_token"=>$accessToken], "User Registeration Successfull", 200);
+            
+            return $this->success(['user'=>$user, 'access_token'=>$accessToken]);
         }catch(Exception $e){
-            return $this->error($e->getMessage(), "Error Registering User", 400);
+            return $this->error($e->getMessage(), "User Registeration Failed");
         }
-
     }
 }

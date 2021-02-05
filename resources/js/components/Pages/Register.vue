@@ -11,29 +11,30 @@
                             <div class="text-center">
                                 <img src='css/assets/images/big/icon.png' alt="wrapkit">
                             </div>
-                            <h2 class="mt-3 text-center">Sign Up for Free</h2>
-                            <form class="mt-4">
+                            <h2 class="mt-3 text-center">Sign Up</h2>
+                            <p class="text-center text-danger" v-if="error">{{ error }}</p>
+                            <form class="mt-4" @submit.prevent="validateRegister">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="your name" v-model="name">
+                                            <input class="form-control" type="text" placeholder="your name" v-model="auth.name">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <input class="form-control" type="email" placeholder="email address" v-model="email">
+                                            <input class="form-control" type="email" placeholder="email address" v-model="auth.email">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <input class="form-control" type="password" placeholder="password" v-model="password">
+                                            <input class="form-control" type="password" placeholder="password" v-model="auth.password">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <button type="submit" class="btn btn-block btn-dark" @click="handleSubmit">Sign Up</button>
+                                        <button type="submit" class="btn btn-block btn-dark">Sign Up</button>
                                     </div>
                                     <div class="col-lg-12 text-center mt-5">
-                                        Already have an account? <a href="#" class="text-danger">Sign In</a>
+                                        Already have an account? <router-link to="/" class="text-danger">Sign In</router-link>
                                     </div>
                                 </div>
                             </form>
@@ -49,44 +50,93 @@
 export default {
     data(){
         return {
-            name : "",
-            email : "",
-            password : "",
+            auth: {
+                _token: window.Laravel.csrfToken
+            },
+            error: null
 
         }
     },
-    created(){
-        this.handleSubmit();
-    },
+   
     methods : {
-        async handleSubmit(e) {
-            e.preventDefault();
-               axios.post('api/v1/auth/register', {
-                            name: this.name,
-                            email: this.email,
-                            password: this.password,
-                          })
-                          .then(response => {
-                              if (response.data){
-                                    localStorage.setItem('user',response.data.data.user.name)
-                                    localStorage.setItem('jwt',response.data.data.access_token)
+        // validateRegister(){
+        //     fetch("http://127.0.0.1:8000/api/v1/auth/register", {
+        //         method: "post",
+        //         body: JSON.stringify(this.auth),
+        //         headers: {
+        //             "content-type": "application/json",
+        //             Accept: "application/json"
+        //         }
+        //     })
+        //     .then(res => res.json())
+        //     .then(res => {
+        //         if(res.status){
+        //             Swal.fire(
+        //                 'Successful!',
+        //                 res.message,
+        //                 'success'
+        //             );
+        //             this.$router.push({path: '/dashboard'})
+        //         }else{
+        //             Swal.fire(
+        //                 'Error!',
+        //                 res.message,
+        //                 'error'
+        //             );
+        //         }
 
-                                    if (localStorage.getItem('jwt') != null){
-                                        this.$router.push("/dashboard");
-                                    }
-                              }else {
-                                  console.log(response);
+        //     })
+        //     .catch(err => console.log(err));
+        // },
+        validateRegister() {
+        const { email, password, name } = this.auth;
 
-                              }
+        const message = !this.auth
+          ? 'Fill in all the fields!'
+          : !email 
+          ? 'Please enter a valid email address!'
+          : !password
+          ? 'Please enter your password'
+          : password.length < 6
+          ? 'Password must have at least 6 characters'
+          : '';
 
-
-                          })
-                          .catch(error => {
-                            console.error(error);
-                          });
+        if (message.length) return (this.error = message);
+        this.error = null;
+        this.register({ name, email, password, user: 'admin' });
+      },
+        async register(data) {
+        try {
+          const res = await axios({
+            method: 'post',
+            data,
+            url: `http://127.0.0.1:8000/api/v1/auth/register`,
+             headers: {
+                    "content-type": "application/json",
+                    Accept: "application/json"
+                    
                 }
-            }
-}
+          });
+          const { user, access_token } = res.data.data;
 
+          localStorage.setItem(
+            'user',
+            JSON.stringify({ ...user, access_token })
+          );
+
+          Swal.fire(
+            'Successful!',
+            'You are now registered as an admin!',
+            'success'
+          );
+          this.$router.push({path: '/dashboard'})
+        } catch (error) {
+          
+          this.error = !error ? 'Network Error!' : 'Invalid email or password!';
+        }
+      }
+
+}
+}
 </script>
 

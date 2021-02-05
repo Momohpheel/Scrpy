@@ -9,13 +9,14 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="css/assets/images/favicon.png">
     <title>Admin</title>
+    <script>window.Laravel = { csrfToken: '{{csrf_token()}}'} </script>
     <link href="css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
 
    <div id="app">
-       <example-component></example-component>
+       <router-view></router-view>
    </div>
 
 </body>

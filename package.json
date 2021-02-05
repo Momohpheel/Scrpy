@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.6.0",
-        "axios": "^0.19",
+        "axios": "^0.21.1",
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
@@ -39,7 +39,7 @@
         "fsevents": "^2.3.1"
     },
     "dependencies": {
-        "sweetalert2": "^10.13.3",
+        "sweetalert2": "^10.14.0",
         "urix": "^0.1.0",
         "vue-router": "^3.5.1"
     }

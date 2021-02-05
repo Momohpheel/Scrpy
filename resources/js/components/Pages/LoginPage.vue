@@ -12,8 +12,9 @@
                                 <img src='css/assets/images/big/icon.png' alt="wrapkit">
                             </div>
                                 <h2 class="mt-3 text-center">Sign In</h2>
-                            <p class="text-center">Enter your email address and password to access admin panel.</p>
-                                <form class="mt-4" @submit.prevent="handleSubmit">
+                                <p class="text-center text-danger" v-if="error">{{ error }}</p>
+                            <p class="text-center" v-else>Enter your email address and password to access admin panel.</p>
+                                <form class="mt-4" @submit.prevent="validateSubmit">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
@@ -23,7 +24,7 @@
                                                     id="uname"
                                                     type="email"
                                                     placeholder="enter your e-mail address"
-                                                    v-model="auth.username"
+                                                    v-model="auth.email"
                                                 />
                                             </div>
                                         </div>
@@ -42,10 +43,10 @@
                                         </div>
 
                                         <div class="col-lg-12 text-center">
-                                            <button type="submit" class="btn btn-block btn-dark" @click="handleSubmit">Sign In</button>
+                                            <button type="submit" class="btn btn-block btn-dark" >Sign In</button>
                                         </div>
                                         <div class="col-lg-12 text-center mt-5">
-                                            Don't have an account? <router-link to="/Ubong/public/register" class="text-danger">Sign Up</router-link>
+                                            Don't have an account? <router-link to="/register" class="text-danger">Sign Up</router-link>
                                         </div>
                                     </div>
                                 </form>
@@ -62,14 +63,62 @@
 
 <script>
 export default {
-    data: () => ({
-        auth: {},
-    }),
-    methods: {
-        validateSubmit() {},
-        async login() {
-
+    data(){
+        return {
+            auth: {},
+            error: null
         }
+    },
+   
+    methods: {
+        
+        validateSubmit() {
+        const { email, password } = this.auth;
+
+        const message = !this.auth
+          ? 'Fill in all the fields!'
+          : !email
+          ? 'Please enter a valid email address!'
+          : !password
+          ? 'Please enter your password'
+          : password.length < 6
+          ? 'Password must have at least 6 characters'
+          : '';
+
+        if (message.length) return (this.error = message);
+        this.error = null;
+
+        this.login({ email, password, user: 'admin' });
+      },
+
+      async login(data) {
+        try {
+          const res = await axios({
+            method: 'post',
+            data,
+            url: `http://127.0.0.1:8000/api/v1/auth/login`,
+              headers: {
+                    "content-type": "application/json",
+                    Accept: "application/json"
+                    
+                }
+          });
+
+          const { user, access_token } = res.data.data;
+
+          localStorage.setItem(
+            'user',
+            JSON.stringify({ ...user, access_token })
+          );
+
+          Swal.fire('Welcome Back!', '', 'success');
+           this.$router.push({path: '/dashboard'})
+            
+          
+        } catch (error) {
+          this.error = !error ? 'Network Error!' : 'Invalid email or password!';
+        }
+      }
     }
 }
 </script>

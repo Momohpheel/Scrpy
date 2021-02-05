@@ -10,12 +10,15 @@ trait Response {
      * @param string $message
      * @return json
      */
-    public function success($data = null, $message = null, $status) {
-        return response()->json([
+   
+    public function success($data = null, $message = null, $status = 200 ) {
+       
+        return response()->json([ 
             "message"   => $message,
             "data"      => $data
         ], $status);
     }
+    
 
     /**
      * @method error - return a error json response
