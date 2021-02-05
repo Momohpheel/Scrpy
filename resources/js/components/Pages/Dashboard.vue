@@ -212,6 +212,7 @@
     },
     methods: {
         fetchUsers(){
+            window.location.reload();
             fetch("https://scrcpybackend.herokuapp.com/api/v1/user/profiles", {
                 method: "get",
                 headers: {
@@ -234,13 +235,13 @@
             .then(res => res.json())
             .then(res => {
                 //console.log(res);
-                this.$router.push({path: '/dashboard'})
+                //this.$router.push({path: '/dashboard'})
                  Swal.fire(
                     'Successful!',
                     'User is deleted!',
                     'success'
                 );
-                
+                window.location.reload()
             })
             .catch(err => console.log(err));
         },
