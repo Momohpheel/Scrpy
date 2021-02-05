@@ -212,7 +212,7 @@
     },
     methods: {
         fetchUsers(){
-            window.location.reload();
+          
             fetch("https://scrcpybackend.herokuapp.com/api/v1/user/profiles", {
                 method: "get",
                 headers: {
