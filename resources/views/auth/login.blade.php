@@ -22,19 +22,19 @@
 </body>
 
 
-<script src=" {{asset('js/app.js')}} "></script>
-<script src="{{asset("js/assets/libs/jquery/dist/jquery.min.js")}} "></script>
-<script src="{{asset("js/assets/libs/popper.js/dist/umd/popper.min.js")}}"></script>
-<script src="{{asset("js/assets/libs/bootstrap/dist/js/bootstrap.min.js")}}"></script>
-<script src="{{asset("js/dist/js/app-style-switcher.js")}}"></script>
-<script src="{{asset("js/dist/js/feather.min.js")}}"></script>
-<script src="{{asset("js/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js")}}"></script>
-<script src="{{asset("js/assets/extra-libs/sparkline/sparkline.js")}}"></script>
-<script src="{{asset("js/dist/js/sidebarmenu.js")}}"></script>
-<script src="{{asset("js/dist/js/custom.min.js")}}"></script>
+<script src=" {{secure_asset('js/app.js')}} "></script>
+<script src="{{secure_asset("js/assets/libs/jquery/dist/jquery.min.js")}} "></script>
+<script src="{{secure_asset("js/assets/libs/popper.js/dist/umd/popper.min.js")}}"></script>
+<script src="{{secure_asset("js/assets/libs/bootstrap/dist/js/bootstrap.min.js")}}"></script>
+<script src="{{secure_asset("js/dist/js/app-style-switcher.js")}}"></script>
+<script src="{{secure_asset("js/dist/js/feather.min.js")}}"></script>
+<script src="{{secure_asset("js/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js")}}"></script>
+<script src="{{secure_asset("js/assets/extra-libs/sparkline/sparkline.js")}}"></script>
+<script src="{{secure_asset("js/dist/js/sidebarmenu.js")}}"></script>
+<script src="{{secure_asset("js/dist/js/custom.min.js")}}"></script>
 {{-- <script src="{{asset("js/assets/libs/jquery/dist/jquery.min.js")}} "></script>
 <script src="{{asset("js/assets/libs/popper.js/dist/umd/popper.min.js")}} "></script> --}}
-<script src="{{asset("js/assets/libs/bootstrap/dist/js/bootstrap.min.js")}} "></script>
+<script src="{{secure_asset("js/assets/libs/bootstrap/dist/js/bootstrap.min.js")}} "></script>
 
 
 </html>

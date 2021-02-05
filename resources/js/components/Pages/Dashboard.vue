@@ -212,7 +212,7 @@
     },
     methods: {
         fetchUsers(){
-            fetch("http://127.0.0.1:8000/api/v1/user/profiles", {
+            fetch("https://scrcpybackend.herokuapp.com//api/v1/user/profiles", {
                 method: "get",
                 headers: {
                     "content-type": "application/json",
@@ -227,7 +227,7 @@
             .catch(err => console.log(err));
         },
         deleteUser(id){
-            fetch(`http://127.0.0.1:8000/api/v1/user/delete/${id}`, {
+            fetch(`https://scrcpybackend.herokuapp.com//api/v1/user/delete/${id}`, {
                 method: "delete",
                 
             })

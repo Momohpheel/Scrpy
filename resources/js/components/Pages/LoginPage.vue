@@ -96,7 +96,7 @@ export default {
           const res = await axios({
             method: 'post',
             data,
-            url: `http://127.0.0.1:8000/api/v1/auth/login`,
+            url: `https://scrcpybackend.herokuapp.com//api/v1/auth/login`,
             headers: {
                 "content-type": "application/json",
                 Accept: "application/json"

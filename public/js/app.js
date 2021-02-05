@@ -2181,7 +2181,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchUsers: function fetchUsers() {
       var _this = this;
 
-      fetch("http://127.0.0.1:8000/api/v1/user/profiles", {
+      fetch("https://scrcpybackend.herokuapp.com//api/v1/user/profiles", {
         method: "get",
         headers: {
           "content-type": "application/json",
@@ -2198,7 +2198,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteUser: function deleteUser(id) {
       var _this2 = this;
 
-      fetch("http://127.0.0.1:8000/api/v1/user/delete/".concat(id), {
+      fetch("https://scrcpybackend.herokuapp.com//api/v1/user/delete/".concat(id), {
         method: "delete"
       }).then(function (res) {
         return res.json();
@@ -2369,7 +2369,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios({
                   method: 'post',
                   data: data,
-                  url: "http://127.0.0.1:8000/api/v1/auth/login",
+                  url: "https://scrcpybackend.herokuapp.com//api/v1/auth/login",
                   headers: {
                     "content-type": "application/json",
                     Accept: "application/json"
@@ -2548,7 +2548,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios({
                   method: 'post',
                   data: data,
-                  url: "http://127.0.0.1:8000/api/v1/auth/register",
+                  url: "https://scrcpybackend.herokuapp.com//api/v1/auth/register",
                   headers: {
                     "content-type": "application/json",
                     Accept: "application/json"
