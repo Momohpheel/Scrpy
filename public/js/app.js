@@ -2203,12 +2203,12 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         return res.json();
       }).then(function (res) {
-        console.log(res);
-        Swal.fire('Successful!', 'User is deleted!', 'success');
-
+        //console.log(res);
         _this2.$router.push({
           path: '/dashboard'
         });
+
+        Swal.fire('Successful!', 'User is deleted!', 'success');
       })["catch"](function (err) {
         return console.log(err);
       });
@@ -42743,7 +42743,7 @@ var render = function() {
                                     staticClass: "btn btn-danger",
                                     on: {
                                       click: function($event) {
-                                        return _vm.deleteUser(user.id)
+                                        return _vm.deleteUser(user.user.id)
                                       }
                                     }
                                   },

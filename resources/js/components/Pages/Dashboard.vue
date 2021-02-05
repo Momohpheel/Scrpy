@@ -175,7 +175,7 @@
                                                     <td>{{user.phone}}</td>
                                                     <td>{{user.user.email}}</td>
                                                     <td>
-                                                        <button class="btn btn-danger" @click="deleteUser(user.id)"> Delete User</button>
+                                                        <button class="btn btn-danger" @click="deleteUser(user.user.id)"> Delete User</button>
                                                     </td>
                                                 </tr>
                                             
@@ -233,13 +233,14 @@
             })
             .then(res => res.json())
             .then(res => {
-                console.log(res);
+                //console.log(res);
+                this.$router.push({path: '/dashboard'})
                  Swal.fire(
                     'Successful!',
                     'User is deleted!',
                     'success'
                 );
-                this.$router.push({path: '/dashboard'})
+                
             })
             .catch(err => console.log(err));
         },

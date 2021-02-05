@@ -85,6 +85,8 @@ class UserController extends Controller
     public function deleteUser($id){
         $profile = Profile::where('user_id', $id)->first();
         $profile->delete();
+        $user = User::where('id', $id)->first();
+        $user->delete();
         return $this->success(true, "Profile Deleted", 200);
 
 
