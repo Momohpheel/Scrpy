@@ -110,7 +110,7 @@ export default {
           const res = await axios({
             method: 'post',
             data,
-            url: `https://scrcpybackend.herokuapp.com//api/v1/auth/register`,
+            url: `https://scrcpybackend.herokuapp.com/api/v1/auth/register`,
              headers: {
                     "content-type": "application/json",
                     Accept: "application/json"
