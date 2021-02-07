@@ -75,7 +75,7 @@ class LoginController extends Controller
  
         switch($user){
            case 'user':
-               $user =  User::where('email',$request->email)->where('password', Hash::check($request->password))->first();
+               $user =  User::where('email',$request->email)->where('password', md5($request->password))->first();
                 if ($user){
                     return $this->authenticated($request, $user);
                 }else{
@@ -83,7 +83,7 @@ class LoginController extends Controller
                 }
            break;
            case 'admin':
-                $user =  Admin::where('email',$request->email)->where('password', Hash::check('INPUT PASSWORD', $request->password))->first();
+                $user =  Admin::where('email',$request->email)->where('password', md5($request->password))->first();
                 if ($user){
                     return $this->authenticated($request, $user);
                 }else{
