@@ -2181,7 +2181,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchUsers: function fetchUsers() {
       var _this = this;
 
-      fetch("https://scrcpybackend.herokuapp.com//api/v1/user/profiles", {
+      fetch("https://scrcpybackend.herokuapp.com/api/v1/user/profiles", {
         method: "get",
         headers: {
           "content-type": "application/json",
@@ -2196,25 +2196,21 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     deleteUser: function deleteUser(id) {
-      var _this2 = this;
-
-      fetch("https://scrcpybackend.herokuapp.com//api/v1/user/delete/".concat(id), {
+      fetch("https://scrcpybackend.herokuapp.com/api/v1/user/delete/".concat(id), {
         method: "delete"
       }).then(function (res) {
         return res.json();
       }).then(function (res) {
         //console.log(res);
-        _this2.$router.push({
-          path: '/dashboard'
-        });
-
+        //this.$router.push({path: '/dashboard'})
         Swal.fire('Successful!', 'User is deleted!', 'success');
+        window.location.reload();
       })["catch"](function (err) {
         return console.log(err);
       });
     },
     logout: function logout() {
-      var _this3 = this;
+      var _this2 = this;
 
       Swal.fire({
         title: 'Are you sure?',
@@ -2236,7 +2232,7 @@ __webpack_require__.r(__webpack_exports__);
             icon: 'success'
           });
 
-          _this3.$router.push({
+          _this2.$router.push({
             path: '/'
           });
         }
@@ -2369,7 +2365,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios({
                   method: 'post',
                   data: data,
-                  url: "https://scrcpybackend.herokuapp.com//api/v1/auth/login",
+                  url: "https://scrcpybackend.herokuapp.com/api/v1/auth/login",
                   headers: {
                     "content-type": "application/json",
                     Accept: "application/json"
@@ -2548,7 +2544,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios({
                   method: 'post',
                   data: data,
-                  url: "https://scrcpybackend.herokuapp.com//api/v1/auth/register",
+                  url: "https://scrcpybackend.herokuapp.com/api/v1/auth/register",
                   headers: {
                     "content-type": "application/json",
                     Accept: "application/json"
@@ -43136,7 +43132,8 @@ var render = function() {
             _c("div", {
               staticClass: "col-lg-7 col-md-5 modal-bg-img",
               staticStyle: {
-                "background-image": "url('css/assets/images/big/3.jpg')"
+                "background-image":
+                  "url('https://scrcpybackend.herokuapp.com/css/assets/images/big/3.jpg')"
               }
             }),
             _vm._v(" "),
@@ -43288,7 +43285,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center" }, [
       _c("img", {
-        attrs: { src: "css/assets/images/big/icon.png", alt: "wrapkit" }
+        attrs: {
+          src:
+            "https://scrcpybackend.herokuapp.com/css/assets/images/big/icon.png",
+          alt: "wrapkit"
+        }
       })
     ])
   },
@@ -43335,7 +43336,7 @@ var render = function() {
             "auth-wrapper d-flex no-block justify-content-center align-items-center position-relative",
           staticStyle: {
             background:
-              "url('css/assets/images/big/auth-bg.jpg') no-repeat center center"
+              "url('https://scrcpybackend.herokuapp.com/css/assets/images/big/auth-bg.jpg') no-repeat center center"
           }
         },
         [
@@ -43343,7 +43344,8 @@ var render = function() {
             _c("div", {
               staticClass: "col-lg-7 col-md-5 modal-bg-img",
               staticStyle: {
-                "background-image": "url('css/assets/images/big/3.jpg')"
+                "background-image":
+                  "url('https://scrcpybackend.herokuapp.com/css/assets/images/big/3.jpg')"
               }
             }),
             _vm._v(" "),
@@ -43497,7 +43499,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center" }, [
       _c("img", {
-        attrs: { src: "css/assets/images/big/icon.png", alt: "wrapkit" }
+        attrs: {
+          src:
+            "https://scrcpybackend.herokuapp.com/css/assets/images/big/icon.png",
+          alt: "wrapkit"
+        }
       })
     ])
   },

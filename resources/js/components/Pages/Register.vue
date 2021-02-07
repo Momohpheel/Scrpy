@@ -2,14 +2,14 @@
     <div id="app">
         <div class="main-wrapper">
             <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-                style="background:url('css/assets/images/big/auth-bg.jpg') no-repeat center center;">
+                style="background:url('https://scrcpybackend.herokuapp.com/css/assets/images/big/auth-bg.jpg') no-repeat center center;">
                 <div class="auth-box row">
-                    <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url('css/assets/images/big/3.jpg');">
+                    <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url('https://scrcpybackend.herokuapp.com/css/assets/images/big/3.jpg');">
                     </div>
                     <div class="col-lg-5 col-md-7 bg-white">
                         <div class="p-3">
                             <div class="text-center">
-                                <img src='css/assets/images/big/icon.png' alt="wrapkit">
+                                <img src='https://scrcpybackend.herokuapp.com/css/assets/images/big/icon.png' alt="wrapkit">
                             </div>
                             <h2 class="mt-3 text-center">Sign Up</h2>
                             <p class="text-center text-danger" v-if="error">{{ error }}</p>
