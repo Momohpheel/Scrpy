@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Traits\Response;
+use App\User;
+use App\Admin;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -80,13 +83,14 @@ class LoginController extends Controller
                 }
            break;
            case 'admin':
-                $user =  Admin::where('email',$request->email)->where('password', Hash::check($request->password))->first();
+                $user =  Admin::where('email',$request->email)->where('password', Hash::check('INPUT PASSWORD', $request->password))->first();
                 if ($user){
                     return $this->authenticated($request, $user);
                 }else{
                     return $this->error([], "User doesn't exist");
                 }
            break;
+           
            default:
                 $user =  User::where('email',$request->email)->where('password', Hash::check($request->password))->first();
                 if ($user){
