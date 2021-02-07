@@ -72,13 +72,28 @@ class LoginController extends Controller
  
         switch($user){
            case 'user':
-               $model = User::class;
+               $user =  User::where('email',$request->email)->where('password', Hash::check($request->password))->first();
+                if ($user){
+                    return $this->authenticated($request, $user);
+                }else{
+                    return $this->error([], "User doesn't exist");
+                }
            break;
            case 'admin':
-                $model = Admin::class;
+                $user =  Admin::where('email',$request->email)->where('password', Hash::check($request->password))->first();
+                if ($user){
+                    return $this->authenticated($request, $user);
+                }else{
+                    return $this->error([], "User doesn't exist");
+                }
            break;
            default:
-                $model = User::class;
+                $user =  User::where('email',$request->email)->where('password', Hash::check($request->password))->first();
+                if ($user){
+                    return $this->authenticated($request, $user);
+                }else{
+                    return $this->error([], "User doesn't exist");
+                }
                break;
            }
 
