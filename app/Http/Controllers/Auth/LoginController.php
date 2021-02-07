@@ -67,6 +67,28 @@ class LoginController extends Controller
             }
       
     }
+    public function login(Request $request){
+        $user = $request->user ?? null;
+ 
+        switch($user){
+           case 'user':
+               $model = User::class;
+           break;
+           case 'admin':
+                $model = Admin::class;
+           break;
+           default:
+                $model = User::class;
+               break;
+           }
+
+           $user =  $model->where('email',$request->email)->where('password', Hash::check($request->password))->first();
+           if ($user){
+               return $this->authenticated($request, $user);
+           }else{
+            return $this->error([], "User doesn't exist");
+           }
+        }
     /**
      * The user has been authenticated.
      *
