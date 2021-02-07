@@ -92,7 +92,7 @@ class LoginController extends Controller
            break;
            
            default:
-                $user =  User::where('email',$request->email)->where('password', Hash::check($request->password))->first();
+                $user =  User::where('email',$request->email)->where('password', md5($request->password))->first();
                 if ($user){
                     return $this->authenticated($request, $user);
                 }else{
